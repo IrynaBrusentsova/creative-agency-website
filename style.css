@@ -1,0 +1,414 @@
+
+/*font-family: 'Signika Negative', sans-serif;
+font-family: 'Inconsolata', monospace;*/
+/*#0097e6 синий*/
+/*#33d9b2 зелений*/
+/*#ff5252 червоний*/
+/*Для тексту будемо використовувати кольори #ffffff 
+(білий — для тексту на кольоровому фоні) 
+та #2c2c54 (темно-синій - для тексту на світлому фоні).*/
+
+
+
+/*Global*/
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+body {
+    color: #2c2c54;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: 'Inconsolata', sans-serif;
+    cursor: pointer;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;    
+}
+section {
+    padding: 96px 0;
+}
+/* Navigation */
+nav {
+    background-color: #0097e6;
+    padding: 12px 0;
+}
+.navigation ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.navigation ul li {
+    display: inline-block;
+    margin: 0 36px 0 0;
+    position: relative;
+}
+.navigation ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navigation a:hover {
+    color: #33d9b2;
+}
+
+.navigation ul ul li {
+    display: block;
+    margin: 0 0 12px 0;
+}
+.navigation ul ul {
+    display: none;
+    background-color: #ffffff;
+}
+.navigation li:hover ul {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top:12px;
+}
+.navigation ul ul li a {
+    color: #0097e6;
+    margin: 0 24px;
+}
+.navigation ul ul li a:hover{
+    color: #33d9b2;
+}
+
+.red { background-color:#ff5252;}
+.red-small{height: 48px;}
+
+.red-big{height: 96px;}
+
+/*Splash*/
+.splash {
+    min-height: 500px;
+    background-color: #0097e6;
+    color:#ffffff;
+    display: flex;
+}
+.splash-inner {
+    margin:  auto;
+    max-width: 70%;
+}
+h1 {
+    font-size: 72px;
+    word-spacing:24px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0;
+}
+.page-title span {
+    font-family: 'Signika Negative', sans-serif;
+}
+h2 {
+    margin:  24px 0;
+    font-weight: 300;
+    font-size: 16px;
+}
+.btn {
+    display: inline-block;
+    min-width: 160px;
+    padding: 16px;
+    margin: 24px auto 0 auto;
+    border: solid 2px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    background-color: inherit;
+    background-position: 100% 0;
+    background-size: 300%;
+    transition: all 1.5s;
+}
+
+.btn:hover {
+    background-position: 0 100%;
+    color: #ff5252;
+}
+.btn-one {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+.btn-one:hover {
+    color: #2c2c54;
+    font-weight: 600;
+}
+
+/*Services*/
+.wrap-services {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    counter-reset: number 0; /*задаємо лічильник блоку, в якому  потрібно пронумеровати блоки*/
+    position: relative;
+}
+
+.wrap-services div {
+     counter-increment: number 1; /*встановлюємо ітерацію лічильнику, за замовчуванням 1*/
+}
+
+.wrap-services div:before{
+     content:counter(number);   /* показуємо контент*/
+     font-size: 144px;
+     font-weight: bold;
+     font-family: 'Signika Negative', sans-serif;
+     line-height: 1;
+     color: #33d9b2;
+     opacity: 0.3;
+     z-index: 0;
+     position: absolute;
+}
+
+.wrap-services > div {
+    flex: 0 0 33.333%;
+}
+.wrap-services>div p:first-of-type {
+    font-weight:600;
+    font-size:18px;
+    font-family: 'Signika Negative', sans-serif; 
+}
+
+h3 {
+    font-size: 48px;
+    margin: 0 0 72px 0;
+}
+h4 {
+    font-size: 24px;
+    margin: 0 0 12px 0;
+}
+.btn-one,.btn-two, .btn-three, .btn-four{
+    background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+}
+.btn-two {
+    border-color:#33d9b2;
+    color: #33d9b2; 
+}
+.btn-three {
+    border-color:#ff5252;
+    color: #ff5252;
+}
+.btn-four {
+    border-color:#0097e6;
+    color: #0097e6;
+}
+
+
+/*Work*/
+.wrap-work {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+ .work-left{
+    display: flex;
+    flex: 0 0 50%;
+    justify-content: space-between;
+    min-width:  300px;
+    margin-bottom: 96px;  
+}
+.work-image {
+    display: flex;
+    min-width: 250px;
+    height: 325px; 
+    position: relative;
+    margin-right:  40px;
+    background-size: cover;  
+}
+
+.work-image::after{
+    position: absolute;
+    content:'';
+    background-color: #33d9b2;
+    width:250px;
+    height:325px;
+    opacity: 0.3;
+    top: 20px;
+    left: 20px;
+    transition-duration: 1.5s;   
+}
+
+.work-image:hover::after{
+    position: absolute;
+    content:'';
+    background-color: #33d9b2;
+    width:250px;
+    height:325px;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+}
+
+.wrap-work div:first-child div:first-child{
+    background-image: url(https://i.postimg.cc/Dfx98kC7/pexels-picjumbocom-196644.jpg);
+
+}
+.wrap-work div:nth-child(2) div:first-child{
+    background-image: url(https://i.postimg.cc/x8HYK6p0/pexels-pixabay-257923.jpg); 
+
+}
+.wrap-work div:nth-child(3) div:first-child{
+    background-image: url(https://i.postimg.cc/HkF2N36G/pexels-jessica-lewis-creative-583842.jpg);
+}
+.wrap-work div:last-child div:first-child{
+    background-image: url(https://i.postimg.cc/bNs1jkDq/pexels-anna-nekrashevich-8534153.jpg);
+}
+
+.work-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.work-description p:last-of-type{
+    font-weight:600;
+    font-size:18px;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.btn-five {
+    border: none;
+    margin: 36px 0;
+    padding: 0;
+    text-align: left;
+    color: #0097e6;
+} 
+
+
+/*Contact*/
+.form {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+}
+.form-item1{
+    flex: 2 0 0; 
+}
+.form-item2  {
+    width: 96px;
+    margin: 0 30px;
+}
+.form-item3 {
+    flex: 1 0 0;
+}
+.form-item3 p:first-child, p:nth-child(3), p:nth-child(7) {
+    font-weight: 600;
+    padding-top: 20px;
+}
+.form-item3 p {
+    margin: 0;
+}
+.contacts {
+    min-height: 500px;
+    background-color: #0097e6;
+    color:#ffffff;
+}
+
+input, textarea {
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    background-color: inherit;
+    width: 100%;
+}
+
+/*Footer*/
+.footer i {
+    font-size: 30px;
+    background-color: #ff5e57;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    border-radius: 50%;
+    padding-top: 15px;
+    padding-left: 5px;
+    transition: transform 0.8s;
+}
+
+.footer i:hover {
+    transform: scale(1.2);
+}
+
+.footer ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center; 
+}
+
+.footer ul li {
+    display: inline-block;  
+}
+.footer ul li a {
+    text-decoration: none;
+    font-size: 0;
+}
+
+
+
+/* Media */
+
+/*TABLET*/
+
+@media (max-width: 991px) {
+     .wrap-work, .wrap-services,.form  {
+        flex-direction: column;
+    }  
+}
+
+@media (max-width: 767px){
+    .wrap-work, .wrap-services,.form  {
+        flex-direction: column;
+    }     
+    h1 {
+        font-size: 48px;
+    }
+    .navigation ul li a {
+        font-size: 12px;
+    }
+    .navigation ul li {
+        margin: 0;
+    }
+    .wrap-services div:not(div:last-child) {
+        margin-bottom: 60px;
+    }
+    section {
+        padding: 30px 0;
+    }
+    h3 {
+        font-size: 24px;
+    }
+}
+
+/*MOBILE*/
+@media (max-width: 575px) {
+    .work-left {
+        flex-direction: column;
+        order: 2;
+    }
+    .work-image {
+    width: 250px;
+    height: 150px; 
+    }
+    .work-image::after{
+        height: 150px;  
+    }
+    .work-image:hover::after{
+        height: 150px;  
+    }
+    .work-description {
+        margin-top: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
